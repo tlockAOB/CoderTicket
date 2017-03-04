@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'events#index'
+  root :to => redirect("/upcoming")
   get '/upcoming' => 'events#index'
 
   resources :events do

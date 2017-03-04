@@ -12,4 +12,8 @@ class Event < ActiveRecord::Base
 
   delegate :name, to: :venue, allow_nil: true, prefix: true
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
 end

@@ -21,7 +21,7 @@ dalat = Venue.create({
 })
 
 e = Event.create({
-  name: 'Việt Nam Thử Thách Chiến Thắng', 
+  name: 'Việt Nam Thử Thách Chiến Thắng',
   starts_at: DateTime.parse('Fri, 11 Mar 2016 7:00 AM+0700'),
   ends_at: DateTime.parse('Sun, 13 Mar 2016 3:00 PM+0700'),
   venue: dalat,
@@ -49,11 +49,11 @@ dan_venue = Venue.create({
 })
 
 e = Event.create({
-  name: 'Cảm ơn Đời - Live Concert Đan Trường', 
+  name: 'Cảm ơn Đời - Live Concert Đan Trường',
   venue: dan_venue,
   category: Category.find_by(name: 'Entertainment'),
   starts_at: DateTime.parse('Sat, 16 Jan 2016, 8:00 PM+0700'),
-  ends_at: DateTime.parse('Sat, 16 Jan 2016, 10:30 PM+0700'),  
+  ends_at: DateTime.parse('Sat, 16 Jan 2016, 10:30 PM+0700'),
   hero_image_url: 'https://media.ticketbox.vn/eventcover/2015/12/11/C68636.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter',
   extended_html_description: <<-DESC
   <p style="text-align:justify"> </p>
@@ -109,7 +109,7 @@ e = Event.create({
   <p style="text-align:justify"> </p>
 
                           </div>
-                          
+
                           <!--/agenda-->
                       </div>
                   </div>
@@ -154,7 +154,37 @@ e = Event.create({
   <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">Ngo&agrave;i ra c&ograve;n nhiều Voucher tặng bạn v&ocirc; c&ugrave;ng hấp dẫn :D</span></p>
 
                         </div>
-                        
+
   DESC
-})  
+})
+e.ticket_types << TicketType.create(name: 'General', price: 99000, max_quantity: 1000)
+
+# Fourth Event -- super future event
+
+e = Event.create({
+  name: 'Super Future Event',
+  starts_at: DateTime.parse('10 July 2045, 8:00 PM+0700'),
+  ends_at: DateTime.parse('10 July 2045, 11:00 PM+0700'),
+  venue: dalat,
+  category: Category.find_by(name: 'Everything Else'),
+  hero_image_url:'https://media.ticketbox.vn/eventcover/2015/10/25/C6A1A5.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter',
+  extended_html_description: <<-DESC
+         <p>
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">* Bạn một m&igrave;nh, bạn FA ?</span><br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">* Bạn chưa biết l&agrave;m g&igrave; v&agrave;o tối thứ năm cuối th&aacute;ng 12 n&agrave;y ?</span><br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">* Đ&oacute; l&agrave; đ&ecirc;m gi&aacute;ng sinh, bạn muốn một buổi tối vui vẻ ?</span><br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">* Bạn muốn nghe những b&agrave;i h&aacute;t hay l&atilde;ng mạn mộc mạc b&ecirc;n c&acirc;y đ&agrave;n guitar ?</span><br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">* Buffet với tr&agrave;, b&aacute;nh kẹo ngon, tr&aacute;i c&acirc;y tươi đa dạng, phong ph&uacute; với những người bạn mới th&uacute; vị ?</span><br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">*Được nhận những m&oacute;n qu&agrave; bất ngờ từ &ocirc;ng gi&agrave; Noel :D ?</span><br />
+  <br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">Nếu bạn cảm thấy thoải m&aacute;i, hứng khởi về những điều tr&ecirc;n bạn h&atilde;y đến với chương tr&igrave;nh Merry Christmas Never Alone do Gap Yolo Hanoi tổ chức tại 1B Quốc Tử Gi&aacute;m, ngay trung t&acirc;m H&agrave; Nội, tr&ecirc;n tầng 5 ngắm phố phường đ&ocirc;ng đ&uacute;c, nhộn nhịp qua lại v&agrave; bầu trời thanh b&igrave;nh H&agrave; Nội.</span><br />
+  <br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">Gi&aacute; v&eacute; chỉ 99K/ v&eacute;/ người (đ&atilde; bao gồm v&eacute; giữ xe)</span><br />
+  <br />
+  <span style="background-color:rgb(255, 255, 255); color:rgb(20, 24, 35); font-family:helvetica,arial,sans-serif; font-size:14px">Ngo&agrave;i ra c&ograve;n nhiều Voucher tặng bạn v&ocirc; c&ugrave;ng hấp dẫn :D</span></p>
+
+                        </div>
+
+  DESC
+})
 e.ticket_types << TicketType.create(name: 'General', price: 99000, max_quantity: 1000)
