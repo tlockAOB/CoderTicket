@@ -1,15 +1,65 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/TLock/Sites/coderschool/hw3/CoderTicket/spec/controllers/events_controller_spec.rb": [
+      "/Users/TLock/Sites/coderschool/hw3/CoderTicket/spec/models/event_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
         1,
         1,
         1,
+        null,
+        null,
         1,
         1,
+        1,
+        null,
+        1,
+        null,
         null,
         null,
         null
@@ -643,24 +693,6 @@
         1,
         null
       ],
-      "/Users/TLock/Sites/coderschool/hw3/CoderTicket/app/controllers/events_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/TLock/Sites/coderschool/hw3/CoderTicket/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
       "/Users/TLock/Sites/coderschool/hw3/CoderTicket/app/models/event.rb": [
         1,
         1,
@@ -669,9 +701,22 @@
         null,
         1,
         1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/TLock/Sites/coderschool/hw3/CoderTicket/app/models/venue.rb": [
+        1,
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1488621676
+    "timestamp": 1488625282
   }
 }
