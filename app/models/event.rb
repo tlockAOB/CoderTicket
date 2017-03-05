@@ -10,6 +10,10 @@ class Event < ActiveRecord::Base
     Event.where("starts_at > ?", Time.now)
   end
 
+  def self.search(query)
+    where("name ilike ?", "%#{query}%").where("starts_at > ?", Time.now)
+  end
+
   delegate :name, to: :venue, allow_nil: true, prefix: true
 
   def to_param

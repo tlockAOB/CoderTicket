@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.upcoming
+    if params[:search]
+      @events = Event.search(params[:search]).order("starts_at ASC")
+    else
+      @events = Event.upcoming
+    end
   end
 
   def show
