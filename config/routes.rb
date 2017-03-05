@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/events' => 'events#index', as: :events
 
+  devise_for :users
+
   resources :events do
     resources :tickets
   end
