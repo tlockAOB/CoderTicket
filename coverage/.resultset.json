@@ -906,6 +906,10 @@
         1,
         0,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/TLock/Sites/coderschool/hw3/CoderTicket/app/controllers/application_controller.rb": [
@@ -918,7 +922,6 @@
         0,
         0,
         0,
-        null,
         null,
         null,
         null,
@@ -952,6 +955,6 @@
         null
       ]
     },
-    "timestamp": 1488701643
+    "timestamp": 1488711490
   }
 }
