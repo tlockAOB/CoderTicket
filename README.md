@@ -15,7 +15,7 @@ The following **required** functionality is complete:
 * [ ] 10 model tests (6)
 * [x] 2 route tests (3)
 * [x] 2 controller tests (4 -- 1 controller and 3 request)
-* [ ] 2 view tests
+* [ ] 2 view tests (1 failing events/show)
 
 The person with best test coverage will win a small present from the instructor :)
 
@@ -43,8 +43,8 @@ The person with best test coverage will win a small present from the instructor 
 
 #### Users
 
-* [ ] User can sign up by providing their email, password, and name.
-* [ ] User can login using an email and password.
+* [x] User can sign up by providing their email, password, and name.
+* [x] User can login using an email and password.
 * [ ] Users can create events.
 * [ ] Users must click "publish event" before an event becomes viewable to other users.
     * **HINT**: use `published_at:datetime` and `Event.published` scope (class method)
