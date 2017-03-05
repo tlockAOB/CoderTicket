@@ -14,8 +14,8 @@ The following **required** functionality is complete:
 * [ ] Implement required user stories
 * [ ] 10 model tests (6)
 * [x] 2 route tests (3)
-* [ ] 2 controller tests (1)
-* [x] 2 view tests (3)
+* [x] 2 controller tests (4 -- 1 controller and 3 request)
+* [ ] 2 view tests
 
 The person with best test coverage will win a small present from the instructor :)
 
@@ -31,8 +31,8 @@ The person with best test coverage will win a small present from the instructor 
     * Author notes:
         * Tests written _first_
         * Search is case-insensitive, and there's a test for that
-* [ ] Users can click on an event to see details about the event.
-* [ ] Users can click on "Book Now" to go to a page to purchase tickets.
+* [x] Users can click on an event to see details about the event.
+* [x] Users can click on "Book Now" to go to a page to purchase tickets.
 
 #### Tickets
 

@@ -8,6 +8,7 @@ RSpec.describe EventsController, type: :controller do
       expect(response).to have_http_status(200)
     end
 
+    # THE FOLLOWING WAS CONVERTED TO A REQUEST TEST IN VIEW
     # it "loads events" do
     #   event = Event.new
     #   event.save(validate: false)
@@ -16,4 +17,5 @@ RSpec.describe EventsController, type: :controller do
     # end
 
   end
+
 end

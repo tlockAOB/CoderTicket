@@ -27,15 +27,15 @@
     <div class="col-md-9 event-content">
       <div class="hero-img hidden-sm-down" style="background-image: url(<%= @event.hero_image_url %>); background-size: cover;"> </div>
       <div class="container">
-        <h3> <%= @event.name %> </h3>
+        <h3 class="event-name"> <%= @event.name %> </h3>
         <div class="pull-left">
           <%= fa_icon 'clock-o' %>
         </div>
-        <div class="time-details"> 
-          <%= @event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %> 
+        <div class="time-details">
+          <%= @event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %>
         </div>
 
-        
+
 
         <div class="pull-left">
           <%= fa_icon 'map-marker' %>
@@ -53,7 +53,7 @@
           <%= @event.extended_html_description.html_safe %>
         </div>
 
-      </div>  
+      </div>
     </div>
   </div>
 </div>
