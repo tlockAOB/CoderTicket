@@ -1,0 +1,62 @@
+  <!-- Create Message Form -->
+  <%= form_for [@venue], html: { class: "form-horizontal" } do |f| %>
+
+      <!-- display validation errors -->
+      <% if @venue.errors.present? %>
+        <div class="alert alert-danger">
+          <% @venue.errors.messages.each do |key, value| %>
+            <ul>
+              <li>
+                <strong><%= key %></strong>: <%= value.to_sentence %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      <% end %>
+
+      <!-- NAME -->
+      <div class="form-group">
+        <div class="col-lg-3">
+          <%= f.label :name %>
+        </div>
+        <div class="col-lg-9">
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <!-- REGION -->
+      <div class="form-group">
+        <div class="col-lg-3">
+          <%= f.label :region_id %>
+        </div>
+        <div class="col-lg-9">
+          <%= f.collection_select(:region_id, Region.all, :id, :name, {:prompt=>true}, {:class=>'form-control'}) %>
+        </div>
+      </div>
+
+      <!-- ADDRESS -->
+      <div class="form-group">
+        <div class="col-lg-3">
+          <%= f.label :full_address %>
+        </div>
+        <div class="col-lg-9">
+          <%= f.text_area :full_address, rows: "4", class: 'form-control' %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-9">
+
+          <% if @venue.new_record? %>
+            <%= f.submit nil, class: 'btn btn-primary', value: 'Create' %>
+          <% else %>
+            <%= f.submit nil, class: 'btn btn-primary', value: 'Update' %>
+          <% end %>
+          &nbsp;
+          <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>
+        </div>
+      </div>
+
+  <% end %>

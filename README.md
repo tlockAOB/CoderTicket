@@ -1,9 +1,9 @@
-# Homework 3 - *Name of App*
+# Homework 3 - *CoderTicket*
 
-**Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
+**CoderTicket** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
-- Submitted by: **Your Name Here**
-- Time spent: **X** hours
+- Submitted by: **Tim Wheelock**
+- Time spent: **15** hours **so far**, I'm still working on this app
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
