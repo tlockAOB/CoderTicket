@@ -58,4 +58,44 @@ RSpec.describe Event, type: :model do
     end
 
   end
+
+
+  describe ".published" do
+
+    it "returns nil if events present but no publish" do
+      event1 = Event.create!(
+          name: "Burning Man",
+          starts_at: 2.days.from_now,
+          ends_at: 4.days.from_now,
+          extended_html_description: "a future event",
+          venue: Venue.new,
+          category: Category.new
+      )
+      expect(Event.published).to match_array []
+
+    end
+
+    it "returns published events, and doesn't return unpublished events" do
+      event1 = Event.create!(
+          name: "Burning Man",
+          starts_at: 2.days.from_now,
+          ends_at: 4.days.from_now,
+          extended_html_description: "a future event",
+          venue: Venue.new,
+          category: Category.new,
+          published_at: 2.days.ago
+      )
+      event2 = Event.create!(
+          name: "Burning Woman",
+          starts_at: 2.days.from_now,
+          ends_at: 4.days.from_now,
+          extended_html_description: "a future event",
+          venue: Venue.new,
+          category: Category.new
+      )
+      expect(Event.published).to match_array [event1]
+    end
+
+  end
+
 end
