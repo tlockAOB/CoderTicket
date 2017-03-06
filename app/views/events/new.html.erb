@@ -5,56 +5,7 @@
   <div class="col-sm-2"></div>
   <div class="col-sm-8">
 
-
-  <!-- Creat Message Form -->
-  <%= form_for [@event], method: 'POST', html: { class: "form-horizontal" } do |f| %>
-    <fieldset>
-      <legend>Create Event</h4></legend>
-
-      <!-- display validation errors -->
-      <% if @event.errors.present? %>
-        <div class="alert alert-danger">
-          <% @event.errors.messages.each do |key, value| %>
-            <ul>
-              <li>
-                <strong><%= key %></strong>: <%= value.to_sentence %>
-              </li>
-            </ul>
-          <% end %>
-        </div>
-      <% end %>
-
-      <%= f.hidden_field :creator_id, value: current_user.id %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :venue_id %>
-      <%= f.collection_select(:venue_id, Venue.all, :id, :name) %>
-
-      <%= f.label :category_id %>
-      <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-
-      <%= f.label :starts_at %>
-      <%= f.text_field :starts_at %>
-
-      <%= f.label :ends_at %>
-      <%= f.text_field :ends_at %>
-
-      <%= f.label :extended_html_description %>
-      <%= f.text_field :extended_html_description %>
-
-
-      <div class="form-group">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
-          <%= f.submit nil, class: 'btn btn-primary', value: 'Create' %>
-          &nbsp;
-          <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>
-        </div>
-      </div>
-    </fieldset>
-  <% end %>
+  <%= render 'form' %>
 
   </div>
   <div class="col-sm-2"></div>
