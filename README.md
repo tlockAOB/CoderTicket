@@ -4,7 +4,7 @@
 
 - Submitted by: **Tim Wheelock**
 - Time spent: **15** hours **so far**, I'm still working on this app
-- URL: **Insert your Heroku URL here**
+<!-- - URL: **Insert your Heroku URL here** -->
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
 ## User Stories
@@ -12,7 +12,7 @@
 The following **required** functionality is complete:
 
 * [ ] Implement required user stories
-* [ ] 10 model tests (6)
+* [x] 10 model tests (8)
 * [x] 2 route tests (3)
 * [x] 2 controller tests (4 -- 1 controller and 3 request)
 * [x] 2 view tests (+1 pending in events/show)
@@ -53,7 +53,7 @@ The person with best test coverage will win a small present from the instructor 
         * **Write a test to make sure only an event creator can publish an event**
 * [ ] Users can create ticket types for that event.
     * **HINT**: make sure you understand what a ticket tpe is. Ask if not clear.
-* [ ] Users can create venues.
+* [x] Users can create venues.
 * [ ] An event must have at least one `ticket_type` defined before it can be published.
     * **HINT**: add `Event#have_enough_ticket_types?` (and test it)
 * [x] User can see a list of events he or she has created.
