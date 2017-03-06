@@ -1,1 +1,32 @@
-<h1>My Events</h1>
+<div class="container">
+  <h1>My Events</h1>
+  <div class="col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+          <tr>
+            <td><%= event.name %></td>
+            <td><%= event.starts_at %></td>
+            <% if event.published_at.present? %>
+              <td>Published</td>
+            <% else %>
+              <td><%= link_to "Publish", mark_as_published_event_path(event), class: 'btn btn-primary' %></td>
+            <% end %>
+            <td><%= link_to "Edit", edit_event_path(event), class: 'btn btn-secondary' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

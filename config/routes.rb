@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :tickets
+    get 'mark_as_published', on: :member
+    post '' => 'events#update', on: :member
+
   end
+
 
   resources :venues
 

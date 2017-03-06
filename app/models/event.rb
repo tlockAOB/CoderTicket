@@ -20,4 +20,8 @@ class Event < ActiveRecord::Base
     "#{id}-#{name.parameterize}"
   end
 
+  def self.published
+    where.not(published_at: nil)
+  end
+
 end

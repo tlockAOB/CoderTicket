@@ -12,26 +12,37 @@
   <%= render 'layouts/navbar' %>
 
   <!-- FLASH MESSAGES -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- DEFAULT FLASH -->
+        <% if flash.any? %>
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>">
+              <%= value %>
+            </div>
+          <% end %>
+        <% end %>
 
-    <!-- Main Header (alerts and branding) -->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <% if notice %>
-          <div class="alert alert-info">
-            <%= notice %>
-          </div>
-          <% end %>
-          <% if alert %>
-          <div class="alert alert-danger">
-            <%= alert %>
-          </div>
-          <% end %>
+        <!-- DEVISE FLASH -->
+        <% if notice %>
+        <div class="alert alert-info">
+          <%= notice %>
         </div>
+        <% end %>
+        <% if alert %>
+        <div class="alert alert-danger">
+          <%= alert %>
+        </div>
+        <% end %>
       </div>
     </div>
+  </div>
 
-<%= yield %>
+  <!-- BODY -->
+  <div class="flex-container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
