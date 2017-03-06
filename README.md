@@ -12,7 +12,7 @@
 The following **required** functionality is complete:
 
 * [ ] Implement required user stories
-* [x] 10 model tests (8)
+* [x] 10 model tests (10)
 * [x] 2 route tests (3)
 * [x] 2 controller tests (4 -- 1 controller and 3 request)
 * [x] 2 view tests (+1 pending in events/show)
