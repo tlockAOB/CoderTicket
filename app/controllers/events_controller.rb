@@ -25,6 +25,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def mine
+    @events = Event.find_by_creator_id(current_user.id)
+  end
+
   private
 
   def event_params

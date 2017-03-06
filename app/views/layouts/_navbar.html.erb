@@ -1,0 +1,32 @@
+  <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" href="<%= events_path %>">Coder Ticket</a>
+  <ul class="nav navbar-nav">
+
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to 'Your Tickets', your_tickets_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Your Events', your_events_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Create Event', new_event_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Create Venue', new_venue_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Register', new_user_registration_path, class: "nav-link" %>
+      </li>
+    <% end %>
+
+  </ul>
+</nav>
+<div class="spacer" style="height: 54px"></div>
