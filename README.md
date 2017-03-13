@@ -74,11 +74,17 @@ The person with best test coverage will win a small present from the instructor 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had a difficult time with the more advanced relationships between models in this example. Reading others' code as an addition to the lecture instruction was critical.
+
+This is partly because the lecture was mainly focused on testing. While some of the optional exercises focused nested models or more advanced model relationships, they weren't part of the required stories of previous assignments. Because of this, they were touched on a bit briefly during class. However, reading code of successful past examples was instrumental, and all is now clear.
+
+Before actions, validation, etc was straightforward, it was knowing what 'rails magic' would work where when setting up controller and forms that tripped me up.
+
+On the testing side, see the Pending test in "spec/views/show.html.erb\_spec.rb" I don't understand why I can't test a view which requires the 'ticket\_types' method.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Timothy Wheelock]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
