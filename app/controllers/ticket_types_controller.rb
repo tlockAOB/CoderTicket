@@ -5,7 +5,7 @@ class TicketTypesController < ApplicationController
   end
 
   def create
-    @ticket_type = TicketType.new ticket_params
+    @ticket_type = TicketType.new ticket_type_params
     @event = Event.find(params[:event_id])
     @ticket_type.event_id = @event.id
 
@@ -19,7 +19,7 @@ class TicketTypesController < ApplicationController
 
   private
 
-    def ticket_params
+    def ticket_type_params
       params.require(:ticket_type).permit( :name, :price, :max_quantity)
     end
 end
