@@ -1,5 +1,7 @@
 <div class="container">
-  <h1>My Events</h1>
+  <br>
+  <br>
+  <h1>Your Events Overview</h1>
   <div class="col-sm-12">
     <table class="table">
       <thead>
@@ -7,6 +9,7 @@
           <th>Event</th>
           <th>Date</th>
           <th>Status</th>
+          <th>Actions</th>
           <th></th>
         </tr>
       </thead>
@@ -20,11 +23,25 @@
             <% else %>
               <td><%= link_to "Publish", mark_as_published_event_path(event), class: 'btn btn-primary' %></td>
             <% end %>
-            <td><%= link_to "Edit", edit_event_path(event), class: 'btn btn-secondary' %></td>
+            <td><%= link_to "Edit Details", edit_event_path(event), class: 'btn btn-secondary' %></td>
+            <td><%= link_to "Add Ticket Types", new_event_ticket_type_path(event_id: event.id), class: 'btn btn-secondary' %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>
+<div class="container-fluid events-list">
+  <br>
+  <br>
+  <h1>Your Events Listing Preview</h1>
+    <% @events.in_groups_of(3) do |g| %>
+      <div class="row">
+        <% g.compact.each do |e| %>
+            <%= render partial: 'card', locals: {event: e} %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 

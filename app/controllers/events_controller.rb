@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
 
+## CALL BEFORE ACTIONS (define below)
+
   before_filter :require_permission, only: [:edit, :update]
+  before_filter :have_enough_ticket_types?, only: [:mark_as_published]
 
   def require_permission
     @event = Event.find(params[:id].to_i)
@@ -9,6 +12,18 @@ class EventsController < ApplicationController
       redirect_to your_events_path
     end
   end
+
+  def have_enough_ticket_types?
+    @event = Event.find(params[:id])
+
+    unless @event.ticket_types.count > 0
+      flash[:danger] = "You must add ticket types before you can publish an event"
+      redirect_to your_events_path
+    end
+  end
+
+
+  ## DEFINE STANDARD "CRUD" ACTIONS
 
   def index
     if params[:search]
@@ -51,6 +66,9 @@ class EventsController < ApplicationController
     end
   end
 
+
+## DEFINE APP SPECIFIC ACTIONS
+
   def mine
     @events = Event.where(creator_id: current_user.id)
   end
@@ -67,6 +85,8 @@ class EventsController < ApplicationController
     end
   end
 
+
+## DEFINE PRIVATE ACTIONS
   private
 
   def event_params

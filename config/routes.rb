@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :tickets
+    resources :ticket_types, only: [:new, :create]
     get 'mark_as_published', on: :member
     post '' => 'events#update', on: :member
 
