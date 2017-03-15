@@ -5,13 +5,13 @@
 - Submitted by: **Tim Wheelock**
 - Time spent: **16** hours **so far**, I'm still working on this app
 <!-- - URL: **Insert your Heroku URL here** -->
-- SimpleCov Test Coverage: 98.44% covered [coverage/index.html](coverage/index.html)
+- SimpleCov Test Coverage: 96.44% covered [coverage/index.html](coverage/index.html)
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-* [ ] Implement required user stories
+* [x] Implement required user stories
 * [x] 10 model tests (10)
 * [x] 2 route tests (3)
 * [x] 2 controller tests (4 -- 1 controller and 3 request)
@@ -38,7 +38,7 @@ The person with best test coverage will win a small present from the instructor 
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
 * [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
+* [x] Users cannot buy more tickets than the quantity available.
 * [x] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
 
 #### Users

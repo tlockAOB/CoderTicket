@@ -8,6 +8,7 @@ class TicketTypesController < ApplicationController
     @ticket_type = TicketType.new ticket_type_params
     @event = Event.find(params[:event_id])
     @ticket_type.event_id = @event.id
+    @ticket_type.quantity_remaining = @ticket_type.max_quantity
 
     if @ticket_type.save
       flash[:success] = "Ticket Type added"
