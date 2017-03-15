@@ -3,8 +3,8 @@
 **CoderTicket** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: **Tim Wheelock**
-- Time spent: **16** hours **so far**, I'm still working on this app
-<!-- - URL: **Insert your Heroku URL here** -->
+- Time spent: **24.5** hours
+- URL: **https://tlock-hw3.herokuapp.com/events**
 - SimpleCov Test Coverage: 96.44% covered [coverage/index.html](coverage/index.html)
 
 ## User Stories
@@ -77,7 +77,17 @@ The person with best test coverage will win a small present from the instructor 
 * [x] User ticket purchase screen shows ticket\_type price and calculates total price in real time on change to ticket\_type or quanity select fields
 * [x] User can see a list of all the tickets they are holding / have purchased, with links to event details
 
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+![Video Walkthrough](![Video Walkthrough](hw3.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 ## Notes
+
+Check em out, thanks for watching!
 
 I had a difficult time with the more advanced relationships between models in this example. Reading others' code as an addition to the lecture instruction was critical.
 
