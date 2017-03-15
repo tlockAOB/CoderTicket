@@ -21,3 +21,6 @@ body {
   @include clearfix;
 }
 
+label {
+  text-align: right;
+}

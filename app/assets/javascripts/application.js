@@ -16,3 +16,18 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+  console.log('turbolinks load js ready')
+  //ticket price calculations on client side
+
+    $('#ticket_ticket_type_id, #ticket_quantity').on('change', function(){
+      var id = $('#ticket_ticket_type_id').val();
+      var price = $('#price-' + id).text();
+      var quantity = $('#ticket_quantity').val();
+      var total = (price * quantity);
+
+      $('.js-ticket-price').text('VND ' + price);
+      $('.js-total-price').text('VND ' + total);
+    });
+});

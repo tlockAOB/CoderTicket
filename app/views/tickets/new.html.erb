@@ -28,10 +28,15 @@
     <div class="col-sm-8">
 
     <br>
-    <h1>Create Event</h1>
+    <h1>Buy Tickets</h1>
+    <div class="hidden-sm-up" id="price-table">
+      <%= @event.ticket_types.each do |type| %>
+        <span id="price-<%= type.id %>"><%= type.price %></span>
+      <% end %>
+    </div>
     <br>&nbsp;
 
-    <%= render 'form' %>
+    <%= render 'form',  event: @event, ticket: @ticket %>
 
     </div>
     <div class="col-sm-2"></div>

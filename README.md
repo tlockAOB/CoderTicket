@@ -37,9 +37,9 @@ The person with best test coverage will win a small present from the instructor 
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
 * [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
+* [x] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
 
 #### Users
 
@@ -72,15 +72,21 @@ The person with best test coverage will win a small present from the instructor 
 * [ ] Events are automatically labeled as "Hot". "Hot" events should have a red border or some sort of visual flourish. The event title should also be prefixed with "**HOT:**".
 * [ ] Instead of showing all of the events on the main page, an "admin" user can dictate the events that show up on the main page.
 
+### Additional Stories
+
+* [x] User ticket purchase screen shows ticket\_type price and calculates total price in real time on change to ticket\_type or quanity select fields
+
 ## Notes
 
 I had a difficult time with the more advanced relationships between models in this example. Reading others' code as an addition to the lecture instruction was critical.
 
 This is partly because the lecture was mainly focused on testing. While some of the optional exercises focused nested models or more advanced model relationships, they weren't part of the required stories of previous assignments. Because of this, they were touched on a bit briefly during class. However, reading code of successful past examples was instrumental, and all is now clear.
 
-Before actions, validation, etc was straightforward, it was knowing what 'rails magic' would work where when setting up controller and forms that tripped me up.
+Before actions, validation, etc was straightforward, it was knowing what 'rails magic' would work where when setting up controller and forms that tripped me up. However, since I completed this homework late, some of the nested model stuff was more clear by the time I worked through ticket types and tickets/purchases.
 
 On the testing side, see the Pending test in "spec/views/show.html.erb\_spec.rb" I don't understand why I can't test a view which requires the 'ticket\_types' method.
+
+Something weird I noticed was that when chrome tries to automatically translate from vietnamese to english (on ticket purchase page, venue address has many vn characters), it ends up messing up the markup on the submit buttons. Thats a weird bug.
 
 ## License
 

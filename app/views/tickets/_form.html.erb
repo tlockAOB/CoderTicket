@@ -1,5 +1,5 @@
 <!-- Create Message Form -->
-<%= form_for [@event, @ticket], html: { class: "form-horizontal" } do |f| %>
+<%= form_for [event,ticket], html: { class: "form-horizontal" } do |f| %>
 
                     <!-- display validation errors -->
                     <% if @ticket.errors.present? %>
@@ -20,27 +20,58 @@
                         <%= f.label :name %>
                       </div>
                       <div class="col-lg-9">
-                        <%= f.text_field :name, class: 'form-control' %>
+                        <strong><%= current_user.name %></strong>
                       </div>
                     </div>
 
-                    <!-- REGION -->
+                    <!-- Email -->
                     <div class="form-group">
                       <div class="col-lg-3">
-                        <%= f.label :region_id %>
+                        <%= f.label :email %>
                       </div>
                       <div class="col-lg-9">
-                        <%= f.collection_select(:region_id, Region.all, :id, :name, {:prompt=>true}, {:class=>'form-control'}) %>
+                        <strong><%= current_user.email %></strong>
                       </div>
                     </div>
 
-                    <!-- ADDRESS -->
+
+                    <!-- TICKET TYPE -->
                     <div class="form-group">
                       <div class="col-lg-3">
-                        <%= f.label :full_address %>
+                        <%= f.label :ticket_type %>
                       </div>
                       <div class="col-lg-9">
-                        <%= f.text_area :full_address, rows: "4", class: 'form-control' %>
+                        <%= f.collection_select(:ticket_type_id, @event.ticket_types, :id, :name, {:prompt=>true}, {:class=>'form-control'}) %>
+                      </div>
+                    </div>
+
+                    <!-- PRICE PER TICKET -->
+                    <div class="form-group">
+                      <div class="col-lg-3">
+                        <%= f.label :price_per_ticket %>
+                      </div>
+                      <div class="col-lg-9">
+                        <span class="js-ticket-price"></span>
+                      </div>
+                    </div>
+
+                    <!-- QUANITY -->
+                    <div class="form-group">
+                      <div class="col-lg-3">
+                        <%= f.label :quantity %>
+                      </div>
+                      <div class="col-lg-9">
+                        <%= f.select :quantity, options_for_select(0..10, 1), class: 'form-control' %>
+                      </div>
+                    </div>
+
+                    <!-- TOTAL PRICE -->
+                    <div class="form-group">
+                      <div class="col-lg-3">
+                        <%= f.label :total_price %>
+                      </div>
+                      <div class="col-lg-9">
+                        <span class="js-total-price"></span>
                       </div>
                     </div>
 
@@ -48,24 +79,10 @@
                     <div class="form-group">
                       <div class="col-lg-3"></div>
                       <div class="col-lg-9">
-
-                        <% if @venue.new_record? %>
-                          <%= f.submit nil, class: 'btn btn-primary', value: 'Create' %>
-                        <% else %>
-                          <%= f.submit nil, class: 'btn btn-primary', value: 'Update' %>
-                        <% end %>
+                        <%= f.submit "Add to my account", class: 'btn btn-primary' %>
                         &nbsp;
-                        <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>
+                        <%= link_to "Cancel", event_path(@event), class: 'btn btn-secondary' %>
                       </div>
                     </div>
 
-<% end %>
-
-
-<%= form_tag event_tickets_path(event_id: @event.id) do %>
-  <%= hidden_field_tag :ticket_type_id, value: type.id %>
-  <td> <%= type.name %> </td>
-  <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
-  <td> <%= select_tag(:quantity, options_for_select(0..10)) %> </td>
-  <td> <%= submit_tag 'Buy Now', class: 'btn btn-success' %> </td>
 <% end %>
