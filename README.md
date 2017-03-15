@@ -75,6 +75,7 @@ The person with best test coverage will win a small present from the instructor 
 ### Additional Stories
 
 * [x] User ticket purchase screen shows ticket\_type price and calculates total price in real time on change to ticket\_type or quanity select fields
+* [x] User can see a list of all the tickets they are holding / have purchased, with links to event details
 
 ## Notes
 

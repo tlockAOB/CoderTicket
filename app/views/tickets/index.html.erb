@@ -1,1 +1,33 @@
-<h1>My Tickets</h1>
+<div class="container">
+  <br>
+  <br>
+  <h1>Your Tickets Overview</h1>
+  <div class="col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Ticket Type</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tickets.each do |ticket| %>
+          <tr>
+            <td><%= ticket.ticket_type.event.name %></td>
+            <td><%= ticket.ticket_type.event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %></td>
+            <td><%= ticket.ticket_type.name %></td>
+            <td><%= ticket.quantity %></td>
+            <td><%= link_to "View Event", event_path(ticket.ticket_type.event.id), class: 'btn btn-primary' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+

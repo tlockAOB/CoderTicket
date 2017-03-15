@@ -14,6 +14,7 @@ class TicketsController < ApplicationController
   end
 
   def index
+    @tickets = Ticket.where(buyer_id: current_user.id)
   end
 
   def new
@@ -42,6 +43,6 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:quantity, :ticket_type_id)
+    params.require(:ticket).permit(:quantity, :ticket_type_id, :buyer_id)
   end
 end
